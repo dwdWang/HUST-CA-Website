@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-:root {
+/* 定义全局的CSS变量，--前缀的就是变量，CSS变量可以存储颜色、字体大小、间距等 */
+:root { 
   --primary-blue: #2F80ED;
   --text-dark: #333;
   --bg-white: #fff;
@@ -20,16 +21,19 @@ body {
   line-height: 1.6;
 }
 
-/* 导航栏样式 */
+/* 导航栏样式（html写的导航栏的class="navbar"） */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(5px);
-  padding: 1rem;
-  text-align: center;
-  z-index: 1000;
+  position: fixed; /* 将导航栏固定在视口中，不随页面滚动而移动 */
+  top: 0;          /* 设置导航栏距离视口顶部的距离 */
+  width: 100%;     /* 设置导航栏的宽度为视口的100% */
+  background: rgba(255, 255, 255, 0.95); /* 设置导航栏的背景颜色为半透明的白色 */
+  backdrop-filter: blur(5px); /* 对导航栏背景应用模糊效果 */
+  padding: 1.1rem;   /* 设置导航栏的内边距，导航栏的实际高度是其内容高度加上上下内边距的总和。 */
+  text-align: center; /* 设置导航栏文本居中对齐 */
+  z-index: 1000;   /* 设置导航栏的堆叠顺序，确保在其他内容之上显示 */
+  display: flex;   /* 使用 Flexbox 布局 */
+  justify-content: center; /* 子元素在主轴上居中对齐 */
+  align-items: center; /* 子元素在交叉轴上居中对齐 */
 }
 
 .nav-item {
@@ -41,6 +45,7 @@ body {
 }
 
 .nav-item.active {
+  /* 当导航项处于激活状态时变色 */
   color: var(--primary-blue);
 }
 
@@ -64,4 +69,16 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-wrap: wrap; /* 允许子元素换行 */
+  justify-content: center; /* 子元素在主轴上居中对齐 */
+  align-items: flex-start; /* Ensure items align to the top */
+  gap: 1rem; /* Add gap between items */
+  flex-direction: row;
+}
+
+/* Add specific styles for child elements if needed */
+.project-card, .section {
+  flex: 1 1 100%; /* Ensure full width for each section */
+  margin-bottom: 2rem; /* Add margin to separate sections */
 }

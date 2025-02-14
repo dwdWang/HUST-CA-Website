@@ -1,4 +1,4 @@
-/* 新增滚动吸附规则 */
+/* 滚动吸附规则 */
 html {
     scroll-snap-type: y mandatory;  /* 垂直方向强制吸附 */
     overflow-y: scroll;             /* 确保滚动条始终存在 */
@@ -51,7 +51,7 @@ html {
   @keyframes bounce {
     0%, 100% { transform: translateY(0) translateX(-50%); }
     50% { transform: translateY(-10px) translateX(-50%); }
-  }
+  } /* 弹跳的动画 */
   
   /* 项目展示 */
   .section {
@@ -90,8 +90,20 @@ html {
     border-radius: 4px;
     margin-top: 1rem;
   }
+
+  .contact-with-us {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-wrap: wrap; /* 允许子元素换行 */
+    justify-content: center; /* 子元素在主轴上居中对齐 */
+    align-items: center; /* 子元素在交叉轴上居中对齐 */
+    gap: 1rem; /* Add gap between items */
+    flex-direction: column; /* 子元素在垂直方向上排列 */
+  }
   
-  /* 移动端适配 */
+  /* 移动端适配,小屏幕的时候把project-card的宽度缩小 */
   @media (max-width: 768px) {
  
     .project-card {
@@ -99,3 +111,4 @@ html {
       padding: 1rem;
     }
   }
+

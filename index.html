@@ -1,5 +1,12 @@
+<!-- 这两行代码定义了文档类型为 HTML5，并指定了语言为简体中文。
+ 这是每个 HTML 文档的开头部分，确保浏览器正确解析页面内容。 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
+
+<!-- 头部信息
+设置字符编码charset和视口viewport，确保页面在不同设备上正确显示。
+设置标题title，描述页面的内容。
+引入 CSS 样式文件，控制页面的外观。 -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +14,29 @@
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/sections.css">
 </head>
+
+<!-- 包含页面的实际内容，用户在浏览器中看到的所有东西都在这里。 -->
 <body>
-  <nav class="navbar">
+  <!-- 导航栏 (<nav>)：提供网站的导航链接，用户可以通过点击这些链接跳转到不同的页面部分。 -->
+  <nav class="navbar"> 
     <a href="#home" class="nav-item">首页</a>
     <a href="#projects" class="nav-item">项目</a>
-    <a href="#join" class="nav-item">加入我们</a>
+    <a href="#resources" class="nav-item">学习资料</a>
+    <a href="#join" class="nav-item">与我们交流</a>
   </nav>
+  <!-- 提问：如果不想叫nav，随便改个名字叫sodwjasijsa也能正常运行，会有影响么？ -->
+  <!-- 解答：
+    HTML 标签是 预定义元素，由 W3C 规范严格规定，浏览器通过识别这些标签来正确渲染页面。
+    <nav> <div> <h2> 等是 标准标签名，它们本身具有浏览器内置的语义和默认样式。
+    若将 <nav> 改为 <sodwjasijsa>，你实际是在创建 自定义 HTML 元素（Custom Elements），
+    这需要特殊的 JavaScript 注册流程才能生效，否则浏览器会将其视为普通 <span> 处理。 -->
 
+  <!-- 这一部分代码定义了网页的三个主要内容区块（<section>），每个区块负责展示不同类型的信息。 -->
   <section id="home" class="hero">
+    <!-- class在css文件里定义，id只是一个标识符 -->
     <div class="hero-image"></div>
+    <!-- <div> 标签：<div> 是一个通用的块级容器元素，用于分组文档中的内容。
+      它本身没有语义意义，但可以通过类或 ID 来添加样式和功能。 -->
     <div class="scroll-hint">↓</div>
   </section>
 
@@ -24,33 +45,85 @@
       <div class="project-card">
         <img src="assets/project-screenshot.png" alt="华科百事通">
         <div class="project-info">
-          <h2>华科百事通小程序</h2>
+          <h2>华科百事通网站</h2>
           <p>功能亮点：</p>
           <ul>
-            <li>🌐 校园信息整合 </li>
-            <li>🤔 深度信息搜索</li>
-            <li>📝 超高效收藏夹</li>
+            <li>📅 不能课程查询</li>
+            <li>📚 不能座位预约</li>
+            <li>🚌 不能巴士定位</li>
           </ul>
-          <a href="#" class="button">暂未上线</a>
+          <a href="https://www.baidu.com/" target="_blank" class="button">立即体验</a>
+            <!-- <div>：通用容器，用于分组其他元素。
+              <h2>：二级标题，用于强调项目名称或标题。
+              <p>：段落，用于引入功能亮点的列表。
+              <ul>：无序列表，用于列出一组相关的项目。
+              <li>：列表项，用于列出每个功能亮点。
+              <a>：锚标签，用于创建可点击的链接或按钮。 -->
         </div>
       </div>
     </div>
   </section>
 
-  <section id="join" class="section">
+  <!-- 这个section涉及一个小知识点：嵌套列表的使用 -->
+  <section id="resources" class="section">
     <div class="container">
-      <h2>加入我们</h2>
-      <div class="social-links">
-        <a href="#">
-          <img src="assets/github-icon.svg" alt="GitHub" width="32">
-        </a>
-        <a href="#">
-          <img src="assets/bilibili-icon.svg" alt="B站" width="32">
-        </a>
+      <!-- 为了让“学习资料”和“以下是我们的学习资料和推荐资源：”放在同一列，就要把他俩放在一个div里 -->
+      <div>
+        <h2>学习资料</h2>
+        <p>以下是学习资料和推荐资源：</p>
       </div>
+      <ul>
+        <li>
+          <strong>基础内容：</strong>
+          <ul>
+            <li><a href="https://blog.csdn.net/qq_45796592/article/details/128953729" target="_blank">（转载）协作开发需要的代码管理工具：git</a></li>
+          </ul>
+        </li>
+        <li>
+          <strong>AI应用学习资料：</strong>
+          <ul>
+            <li><a href="https://example.com/resource1" target="_blank">入门：低代码快速开发Agent-Coze</a></li>
+            <li><a href="https://example.com/resource2" target="_blank">进阶（暂时不用）：企业级工具开发Agent-LangChain</a></li>
+            <li><a href="https://example.com/resource3" target="_blank">应用：使用AI Agent开发...</a></li>
+          </ul>
+        </li>
+        <li>
+          <strong>网页开发学习资料：</strong>
+          <ul>
+            <li><a href="https://example.com/resource5" target="_blank">基础入门&总述</a></li>
+            <li><a href="https://example.com/resource6" target="_blank">前端方向入门-Html,CSS,Javascript</a></li>
+            <li><a href="https://example.com/resource8" target="_blank">前端方向进阶-React,vue</a></li>
+            <li><a href="https://example.com/resource7" target="_blank">后端方向入门-Java,SQL</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- 在你的原始代码中，.container 使用了 flex 布局，因此嵌套的 <ul> 会按照 flex 的规则排列，保持了嵌套结构的完整性。
+    当你将 .container 改为非 flex 布局（例如块级布局），.container 的子元素会按照 HTML 的默认块级布局规则排列。
+    在这种情况下：
+    每个 <ul> 和 <li> 都是块级元素，它们会按照文档流从上到下排列。
+    嵌套的 <ul> 会作为父级 <li> 的子元素，但由于块级布局的特性，子列表会直接跟随父列表项，而不是以嵌套的形式显示。
+    因此，嵌套结构会变成线性结构，所有列表项都会从上到下排列，而不会显示为嵌套的层级结构。
+    
+    同时要注意，此时.contain的flex-direction: row;而不是column，
+    contain内有两个大块，你可以拉动浏览器窗口的页面宽度来观察这两个大块的排版变化
+    （最明显的是，在手机上看是竖排的，在电脑上看“学习资料”那块会到左边，这时这两个大块是横排）-->
+
+  <section id="join" class="section">
+    <div class="contact-with-us">
+      <h2 style="text-align: center;">与我们交流</h2>
+      <img src="assets/qr-code.jpg" alt="交流群二维码" width="250">
     </div>
   </section>
 
-  <script src="scripts/scroll-highlight.js"></script>
+<!-- 引入js文件 -->
+<script src="scripts/scroll-highlight.js"></script>
+
+<!-- 尾部信息：包含页面的版权信息、联系信息等。 -->
+<footer class="footer">
+  <p>华中科技大学计算机协会</p>
+</footer>
+
 </body>
 </html>
